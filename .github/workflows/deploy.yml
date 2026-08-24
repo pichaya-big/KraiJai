@@ -68,6 +68,19 @@ jobs:
     if: github.ref == 'refs/heads/main'
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Copy docker-compose.yml via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          source: "docker-compose.yml"
+          target: ${{ secrets.DEPLOY_PATH }}
+
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1.0.3
         with:
