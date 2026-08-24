@@ -1,6 +1,6 @@
 services:
   client:
-    image: ghcr.io/pichaya-big/kraijai-client:latest
+    image: ghcr.io/pichaya-big/kraijai-client:${TAG:-latest}
     container_name: kraijai-client
     restart: always
     networks:
