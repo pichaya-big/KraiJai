@@ -4,7 +4,7 @@ services:
     container_name: kraijai-client
     restart: always
     ports:
-      - "4000:3000"
+      - "4001:3000"
     networks:
       - nginx-proxy-net
 
