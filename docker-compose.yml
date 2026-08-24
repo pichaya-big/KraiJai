@@ -3,11 +3,11 @@ services:
     image: ghcr.io/pichaya-big/kraijai-client:latest
     container_name: kraijai-client
     restart: always
-    ports:
-      - "3000"
     networks:
       - nginx-proxy-net
-
+    expose:
+      - 3000
+    
 networks:
   nginx-proxy-net:
     external: true
