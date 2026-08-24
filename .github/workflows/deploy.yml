@@ -1,9 +1,13 @@
 name: Deploy to Production
 
+# on:
+#   push:
+#     tags:
+#       - '*'
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - main
 
 env:
   REGISTRY: ghcr.io
