@@ -1,8 +1,6 @@
 services:
   client:
-    build:
-      context: ./client
-      dockerfile: Dockerfile
+    image: ghcr.io/pichaya-big/kraijai-client:latest
     container_name: kraijai-client
     restart: always
     ports:
